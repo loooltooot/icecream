@@ -1,0 +1,52 @@
+@use 'variebles';
+
+@font-face {
+    font-family: Stolzl;
+    src: url("/fonts/Stolzl-Regular.ttf");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Stolzl;
+    src: url("/fonts/Stolzl-Bold.ttf");
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Stolzl;
+    src: url("/fonts/Stolzl-Light.ttf");
+    font-weight: 300;
+    font-style: normal;
+}
+
+* {
+    font-size: var(--base-font-size);
+    font-family: "Stolzl", sans-serif;
+}
+
+a,
+.nav__link__element {
+    color: black;
+    cursor: pointer;
+
+    &:hover {
+        color: #797979;
+    }
+}
+
+main {
+    padding-inline: var(--main-inline-padding);
+}
+
+img,
+video,
+svg {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    display: flex;
+}

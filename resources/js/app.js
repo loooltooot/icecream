@@ -1,5 +1,8 @@
 import { createApp, h } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
+import '../css/reset.scss'
+import '../css/normalize.scss'
+import '../css/app.scss'
 
 createInertiaApp({
     resolve: name => {
