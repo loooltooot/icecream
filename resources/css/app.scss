@@ -60,12 +60,18 @@ a,
         padding: .8vw .8vw;
 
         li * {
-            color: #797979;
+            color: var(--unfocus-text-color);
+        }
+
+        li path {
+            fill: var(--unfocus-text-color);
         }
 
         li {
             padding: .5vw .8vw;
             border-radius: .52vw;
+            display: flex;
+            column-gap: .52vw;
             cursor: pointer;
         }
 
@@ -75,6 +81,10 @@ a,
 
         li:hover a {
             color: black;
+        }
+
+        li:hover path {
+            fill: black;
         }
     }
 }
