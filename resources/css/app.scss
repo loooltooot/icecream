@@ -30,13 +30,67 @@ a,
 .nav__link__element {
     color: black;
     cursor: pointer;
+}
 
-    &:hover {
-        color: #797979;
+.fold__menu__title {
+    display: flex;
+    column-gap: .32vw;
+
+    svg {
+        transition: transform .2s ease;
+    }
+
+    svg path {
+        fill: black;
     }
 }
 
-main {
+.fold__menu__wrapper {
+    position: absolute;
+    top: 1.8vw;
+    left: 0;
+    display: none;
+
+    ul {
+        flex-direction: column;
+        row-gap: .26vw;
+        background-color: white;
+        border-radius: 1.04vw;
+        box-shadow: 0 .42vw .83vw 0 rgba(0, 0, 0, 0.1);
+        padding: .8vw .8vw;
+
+        li * {
+            color: #797979;
+        }
+
+        li {
+            padding: .5vw .8vw;
+            border-radius: .52vw;
+            cursor: pointer;
+        }
+
+        li:hover {
+            background-color: #f3f3f3;
+        }
+
+        li:hover a {
+            color: black;
+        }
+    }
+}
+
+.focus__button {
+    background-color: var(--primary-blue-color);
+    padding: .5vw .9vw;
+    border-radius: .4vw;
+    color: white;
+
+    &:hover {
+        background-color: var(--primary-blue-focused-color);
+    }
+}
+
+.main__wrapped {
     padding-inline: var(--main-inline-padding);
 }
 
