@@ -56,7 +56,7 @@ a,
         row-gap: .26vw;
         background-color: white;
         border-radius: 1.04vw;
-        box-shadow: 0 .42vw .83vw 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 .21vw .83vw 0 rgba(0, 0, 0, 0.1);
         padding: .8vw .8vw;
 
         li * {
@@ -94,6 +94,8 @@ a,
     padding: .5vw .9vw;
     border-radius: .4vw;
     color: white;
+    display: block;
+    width: fit-content;
 
     &:hover {
         background-color: var(--primary-blue-focused-color);
@@ -102,6 +104,13 @@ a,
 
 .main__wrapped {
     padding-inline: var(--main-inline-padding);
+}
+
+.card {
+    border-radius: 1.56vw;
+    overflow: clip;
+    padding: .8vw 1.5vw;
+    box-sizing: border-box;
 }
 
 img,
