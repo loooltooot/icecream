@@ -57,6 +57,24 @@ defineProps({ product: Object })
     div.additional__info {
         transition: opacity .5s ease;
         opacity: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: 1.04vw;
+        margin-top: 1.56vw;
+
+        p {
+            line-height: 1.25;
+        }
+
+        .price__ccal {
+            display: flex;
+            column-gap: 1vw;
+
+            span {
+                font-weight: 700;
+                font-size: var(--focus-font-size);
+            }
+        }
     }
 }
 </style>
