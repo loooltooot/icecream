@@ -19,5 +19,17 @@ class UserSeeder extends Seeder
             'name' => 'Админов Админ',
             'role_id' => 1
         ]);
+        User::create([
+            'email' => 'user@ice.com',
+            'password' => 'lolita1',
+            'name' => 'Юзеров Юзер',
+            'role_id' => 2
+        ]);
+        User::create([
+            'email' => 'editor@ice.com',
+            'password' => 'lolita2',
+            'name' => 'Редач Юля',
+            'role_id' => 3
+        ]);
     }
 }
