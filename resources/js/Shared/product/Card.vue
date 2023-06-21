@@ -1,7 +1,7 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
 
-defineProps({ product: Object })
+defineProps({ product: Object, allowDelete: Boolean })
 </script>
 
 <template>
@@ -17,8 +17,11 @@ defineProps({ product: Object })
                     <span class="price">{{ product.price }}₽</span>
                     <span class="ccal">{{ product.ccal }}ккал</span>
                 </div>
-                <Link class="focus__button" :href="/products/ + product.id">
+                <Link class="focus__button" :href="'/admin/products/' + product.id">
                 Узнать больше
+                </Link>
+                <Link v-if="allowDelete" class="focus__button delete" :href="'/admin/products/delete/' + product.id">
+                Удалить
                 </Link>
             </div>
         </div>
@@ -31,6 +34,14 @@ defineProps({ product: Object })
     height: 100%;
     position: relative;
     min-height: 35vw;
+
+    .delete {
+        background-color: #ff1b1b !important;
+
+        &:hover {
+            background-color: #ff4444 !important;
+        }
+    }
 
     &:hover {
         div.additional__info {

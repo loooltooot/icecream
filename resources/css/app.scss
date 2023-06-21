@@ -90,7 +90,7 @@ a,
 }
 
 .focus__button {
-    background-color: var(--primary-blue-color);
+    background-color: var(--primary-blue-color) !important;
     padding: .5vw .9vw;
     border-radius: .4vw;
     color: white;
@@ -98,7 +98,7 @@ a,
     width: fit-content;
 
     &:hover {
-        background-color: var(--primary-blue-focused-color);
+        background-color: var(--primary-blue-focused-color) !important;
     }
 }
 
@@ -113,6 +113,11 @@ a,
     box-sizing: border-box;
 }
 
+.hero__header {
+    font-size: var(--hero-h-font-size);
+    font-weight: 700;
+}
+
 img,
 video,
 svg {
@@ -122,4 +127,23 @@ svg {
 
 ul {
     display: flex;
+}
+
+input:focus {
+    border-color: var(--primary-green-color) !important;
+}
+
+input:is([type='checkbox'], [type='radio']) {
+    accent-color: var(--primary-green-color);
+}
+
+input:is([type='text'], [type='email'], [type='password'], [type='number']) {
+    border: black .055vw solid;
+    border-radius: 1.04vw;
+    padding: .5vw 1.2vw;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
 }
