@@ -2,7 +2,7 @@
 import Layout from '../../Shared/Layout.vue';
 import Card from '../../Shared/product/Card.vue'
 
-defineProps({ products: Array })
+defineProps({ products: Array, allowDelete: Boolean })
 </script>
 
 <script>
@@ -67,7 +67,7 @@ export default {
             </div>
             <ul>
                 <li v-for="product of sortedProducts" :key="product.id">
-                    <Card :product="product" :allow-delete="true" />
+                    <Card :product="product" :allow-delete="allowDelete" />
                 </li>
             </ul>
         </section>

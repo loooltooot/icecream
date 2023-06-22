@@ -1,5 +1,6 @@
 <script setup>
 import { Link } from '@inertiajs/vue3';
+import axios from 'axios';
 </script>
 
 <template>
@@ -52,11 +53,26 @@ import { Link } from '@inertiajs/vue3';
                 </ul>
             </nav>
         </div>
-        <Link class="focus__button" href="https://loooltooot.github.io">Узнать о нас</Link>
+        <div id="extra__div">
+            <Link v-if="$store.state.loggedIn" href="/logout" id="logout">
+            Выйти
+            </Link>
+            <Link class="focus__button" href="https://loooltooot.github.io">Узнать о нас</Link>
+        </div>
     </header>
 </template>
 
 <style lang="scss" scoped>
+#extra__div {
+    display: flex;
+    align-items: center;
+    column-gap: 1.04vw;
+
+    a#logout:hover {
+        color: red;
+    }
+}
+
 header,
 #logo__nav__wrapper {
     display: flex;

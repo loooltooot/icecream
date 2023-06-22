@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Inertia\Inertia;
 
@@ -11,8 +12,11 @@ class ProductController extends Controller
 {
     function index()
     {
+        $currentUser = Auth::user();
+
         return Inertia::render('Product/Show', [
-            'products' => Product::all()
+            'products' => Product::all(),
+            'allowDelete' => $currentUser->role_id === 1
         ]);
     }
 
