@@ -4,6 +4,7 @@ use App\Http\Controllers\LandingController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Middleware\isAdminMiddleware;
 use App\Http\Middleware\isEditorMiddleware;
 use Inertia\Inertia;
@@ -27,7 +28,11 @@ Route::get('/login', [UserController::class, 'login']);
 Route::get('/logout', [UserController::class, 'logout']);
 Route::get('/auth/status', [UserController::class, 'authStatus']);
 
-Route::get('/admin/products', [ProductController::class, 'index'])->middleware([isEditorMiddleware::class]);
+Route::group(['middleware' => [isEditorMiddleware::class]], function () {
+    Route::get('/admin/products', [ProductController::class, 'index']);
+    Route::get('/admin/users', [UserController::class, 'index']);
+    Route::get('/admin/orders', [OrderController::class, 'index']);
+});
 
 Route::group(['middleware' => [isAdminMiddleware::class]], function () {
     Route::get('/admin/products/add', function () {

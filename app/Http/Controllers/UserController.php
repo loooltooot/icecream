@@ -5,9 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Auth;
+use Inertia\Inertia;
 
 class UserController extends Controller
 {
+    public function index()
+    {
+        return Inertia::render('User/Show', [
+            'extendedAccess' => Auth::user()->role_id === 1,
+            'users' => User::join('roles as r', 'role_id',  '=', 'r.id')->get()
+        ]);
+    }
+
     public function login(Request $request)
     {
         $this->validate($request, [
@@ -22,7 +31,9 @@ class UserController extends Controller
 
             return redirect('/admin/products');
         } else {
-            return response()->json(['message' => 'Invalid credentials'], 401);
+            return Inertia::render('Auth/Login', [
+                'message' => 'Неверный логин или пароль'
+            ]);
         }
     }
 

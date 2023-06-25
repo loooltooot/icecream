@@ -27,7 +27,7 @@ export default {
                     <h2 class="hero__header">+ морожка</h2>
                 </div>
             </div>
-            <form action="/admin/products/add" method="POST" enctype="multipart/form-data" accept="image/*">
+            <form class="add__update__form" action="/admin/products/add" method="POST" enctype="multipart/form-data">
                 <input required type="text" name="title" placeholder="Название">
                 <input required type="text" name="description" id="description" placeholder="Описание" />
                 <label for="file">
@@ -36,7 +36,8 @@ export default {
                         <img :src="imgURL" alt="" />
                     </div>
                 </label>
-                <input required @change="fileInputHandler" type="file" name="img" id="file" style="display: none;">
+                <input required @change="fileInputHandler" type="file" name="img" id="file" accept="image/*"
+                    style="display: none;">
                 <input required min="0" type="number" name="price" placeholder="Цена">
                 <input required min="0" type="number" name="ccal" placeholder="Калорийность">
 

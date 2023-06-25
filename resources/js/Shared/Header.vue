@@ -45,10 +45,10 @@ import axios from 'axios';
                         </span>
                     </li>
                     <li>
-                        <Link class="nav__link__element" href="/orders">Заказы</Link>
+                        <Link class="nav__link__element" href="/admin/orders">Заказы</Link>
                     </li>
                     <li>
-                        <Link class="nav__link__element" href="/users">Пользователи</Link>
+                        <Link class="nav__link__element" href="/admin/users">Пользователи</Link>
                     </li>
                 </ul>
             </nav>

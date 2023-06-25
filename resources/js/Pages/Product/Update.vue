@@ -39,7 +39,8 @@ export default {
                     <h2 class="hero__header">+ морожка</h2>
                 </div>
             </div>
-            <form :action="'/admin/products/' + product.id" method="POST" enctype="multipart/form-data" accept="image/*">
+            <form class="add__update__form" :action="'/admin/products/' + product.id" method="POST"
+                enctype="multipart/form-data" accept="image/*">
                 <input v-model="title" required type="text" name="title" placeholder="Название">
                 <input v-model="description" required type="text" name="description" id="description"
                     placeholder="Описание" />
@@ -49,7 +50,8 @@ export default {
                         <img :src="imgURL" :alt="title" />
                     </div>
                 </label>
-                <input required @change="fileInputHandler" type="file" name="img" id="file" style="display: none;">
+                <input required @change="fileInputHandler" type="file" accept="image/*" name="img" id="file"
+                    style="display: none;">
                 <input v-model="price" required min="0" type="number" name="price" placeholder="Цена">
                 <input v-model="ccal" required min="0" type="number" name="ccal" placeholder="Калорийность">
 

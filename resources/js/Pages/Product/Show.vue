@@ -50,19 +50,21 @@ export default {
                     <h2 class="hero__header">
                         морожка
                     </h2>
-                    <input type="text" placeholder="Поиск" v-model="searchQuery">
-                    <label for="price__sort">
-                        по цене
-                    </label>
-                    <input id="price__sort" name="sort" value="price" type="radio" v-model="sortType" />
-                    <label for="ccal_sort">
-                        по ккал
-                    </label>
-                    <input id="ccal_sort" name="sort" value="ccal" type="radio" v-model="sortType" />
-                    <label for="desc">
-                        по убыванию
-                    </label>
-                    <input id="desc" type="checkbox" v-model="desc" />
+                    <div class="filters">
+                        <input type="text" placeholder="Поиск" v-model="searchQuery">
+                        <label for="price__sort">
+                            по цене
+                        </label>
+                        <input id="price__sort" name="sort" value="price" type="radio" v-model="sortType" />
+                        <label for="ccal_sort">
+                            по ккал
+                        </label>
+                        <input id="ccal_sort" name="sort" value="ccal" type="radio" v-model="sortType" />
+                        <label for="desc">
+                            по убыванию
+                        </label>
+                        <input id="desc" type="checkbox" v-model="desc" />
+                    </div>
                 </div>
             </div>
             <ul>
@@ -75,6 +77,14 @@ export default {
 </template>
 
 <style lang="scss" scoped>
+.filters {
+    margin-top: 2.6vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 1.56vw;
+}
+
 .wrapper {
     margin-bottom: 2vw;
     margin-top: -1vw;

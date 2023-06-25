@@ -147,3 +147,16 @@ form {
     display: flex;
     flex-direction: column;
 }
+
+form.add__update__form {
+    display: flex;
+    flex-direction: column;
+    row-gap: .8vw;
+    width: 39.06vw;
+    margin-inline: auto;
+    margin-top: 2.6vw;
+}
+
+::selection {
+    background-color: var(--primary-green-color);
+}
